@@ -1,12 +1,12 @@
 <html>
 <head>
-<script>
-document.getElementById("demo").innerHTML =
-Math.floor(Math.random() * 10);
+<script type="text/javascript">
+  var pageArr = ["page1.html", "page2.html", "page3.html", "page4.html"];
+    document.location.href = pageArr[Math.ceil(Math.random()*pageArr.length)-1];
 </script>
 </head>
 
-<body onload="openLink();">
+<body>
 
 </body>
 </html>
