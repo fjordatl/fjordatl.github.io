@@ -1,3 +1,5 @@
+<html>
+<head>
 <!-- A-Frame 0.7.1 -->
 <!-- <script src="//aframe.io/releases/0.7.1/aframe.min.js"></script> -->
 
@@ -59,51 +61,16 @@
         // console.log('fadein animation completed');
       }.bind(this));
       
-      
-      /*
-        animationcomplete event is buggy -- awaiting fix
-      */
-      
-//       this.el.addEventListener('animationcomplete', function(e) {
-        
-//         console.log(this.el);
-        
-//         var i = 0;
-        
-//         switch ( e.detail.name ) {
-
-//           case 'animation__fadeout' :
-
-//             console.log('fadeout completed');
-//             this.el.setAttribute('text', 'value', messages[++i])
-//             this.el.emit('fadein');
-//             break;
-
-//           case 'animation__fadein' :
-
-//             console.log('fadein completed');
-//             setTimeout( function() {
-//               this.el.emit('fadeout');
-//             }.bind(this), 1000)
-
-//         }
-        
-//       }.bind(this));
-      
     }
     
   });
 </script>
-
+</head>
+  
+<body>
 <!-- SCENE -->
 <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUiEnabled:false;'>
   
-  <!-- audio elements not working for some reason -->
-  <a-assets>
-    <a-asset-item id="beep" src="https://ucarecdn.com/d4358204-ae37-4d29-8eee-32b689bad40e/" preload="auto" crossorigin="anonymous" response-type="arraybuffer"></a-asset-item>
-    <a-asset-item id="projector" src="//ucarecdn.com/529ef4e7-7ea4-4e03-9b62-725bd54d09a3/" preload="auto" crossorigin="anonymous" response-type="arraybuffer"></a-asset-item>
-  </a-assets>
-
   <a-marker type='barcode' value='14'>
     <!-- Screen -->
     <a-entity film geometry="primitive: plane; width: 6; height: 2.5;" material="color: #ffe; shader: flat; opacity: 0.95; side: double;" text="font: roboto; width: 5; color: black; align: center; opacity: 0; zOffset: 0.01;" position="0 2 -4"
@@ -119,3 +86,5 @@
   <a-entity camera></a-entity>
   
 </a-scene>
+</body>
+</html>
