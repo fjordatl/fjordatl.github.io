@@ -1,0 +1,102 @@
+<!-- A-Frame 0.7.1 -->
+<!-- <script src="//aframe.io/releases/0.7.1/aframe.min.js"></script> -->
+
+<!-- A-Frame 0.8.* -->
+<script src="//aframe.io/releases/0.8.2/aframe.min.js"></script>
+
+<!-- A-Frame Master -->
+<!-- <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script> -->
+
+<!-- A-Frame Extras -->
+<!-- <script src="//unpkg.com/aframe-extras@4.1.2/dist/aframe-extras.min.js"></script> -->
+
+<!-- A-Frame Physics -->
+<!-- <script src="//unpkg.com/aframe-physics-system@3.2.0/dist/aframe-physics-system.min.js"></script> -->
+
+<!-- A-Frame Animation -->
+<!-- <script src="//unpkg.com/aframe-animation-component@5.1.0/dist/aframe-animation-component.min.js"></script> -->
+
+<!-- A-Frame Environment -->
+<!-- <script src="//unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> -->
+
+<!-- A-Frame State -->
+<!-- <script src="//unpkg.com/aframe-state-component@4.7.0/dist/aframe-state-component.min.js"></script> -->
+
+<!-- Nav Mesh Inspector Plugin -->
+<!-- Add inspector-plugin-recast component to a-scene -->
+<!-- <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script> -->
+
+<script>
+  AFRAME.registerComponent('wormhole', {
+    
+    schema: {
+      // Number of spheres.
+      count: { type: 'number', default: 500 },
+      // Wormhole radius.
+      radius: { type: 'number', default: 20 },
+      // Wormhole length.
+      length: { type: 'number', default: 500 }
+    },
+    
+    update: function() {
+       
+      for (var sphere, i = 0; i < this.data.count; i++) {
+        // Create sphere.
+        sphere = document.createElement('a-entity');
+        sphere.setAttribute('mixin', 'sphere');
+        // Position sphere in a spiral layout.
+        sphere.object3D.position.set(
+          Math.sin(i) * this.data.radius,
+          Math.cos(i) * this.data.radius,
+          i * (this.data.length / this.data.count)
+        );
+        // Append sphere to parent entity.
+        this.el.appendChild(sphere);
+      }
+      
+      // Center around user.
+      this.el.object3D.position.z = this.data.length / -2;
+      
+      
+    },
+    
+    tick: function(t, dt) {
+      // Rotate at increasing rate, causing a cool "wagon-wheel" effect.
+      this.el.object3D.rotation.z += THREE.Math.degToRad(t / -1000);
+    }
+    
+  });
+</script>
+
+
+<!-- SCENE -->
+<a-scene background="color: black;"
+         renderer="antialias: true; gammaOutput: false;"
+         light="defaultLightsEnabled: true;"
+         fog="type: linear; color: black; far: 1000;">
+  
+  <!-- ASSETS -->
+  <a-assets>
+    <audio id="dw" src="https://ucarecdn.com/98039341-b120-431b-b3da-c5bd2cd95463/" crossorigin="anonymous"></audio>
+    <a-mixin id="sphere" geometry="primitive: sphere; radius: 0.25; segmentsHeight: 9; segmentsWidth: 18;" material="color: blue; shader: flat;"></a-mixin>
+  </a-assets>
+  
+  <!-- CAMERA -->
+  <a-entity id="rig">
+    <a-entity camera
+              wasd-controls
+              look-controls="pointerLockEnabled: true;"
+              position="0 1.6 0">
+    </a-entity>
+  </a-entity>
+  
+  
+  <!-- STAGE -->
+  <a-entity id="stage"
+            sound="src: #dw; loop: true; positional: false; autoplay: true;">
+    
+    <a-entity wormhole></a-entity>
+
+  </a-entity>
+  
+</a-scene>
