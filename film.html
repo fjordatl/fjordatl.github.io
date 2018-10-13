@@ -73,14 +73,14 @@
   
   <a-marker type='barcode' value='14'>
     <!-- Screen -->
-    <a-entity film geometry="primitive: plane; width: 6; height: 2.5;" material="color: #ffe; shader: flat; opacity: 0.95; side: double;" text="font: roboto; width: 5; color: black; align: center; opacity: 0; zOffset: 0.01;" position="0 2 -4"
+    <a-entity film rotation="-90 0 0" geometry="primitive: plane; width: 6; height: 2.5;" material="color: #ffe; shader: flat; opacity: 0.95; side: double;" text="font: roboto; width: 5; color: black; align: center; opacity: 0; zOffset: 0.01;" position="0 2 -4"
               animation__fadein="property: text.opacity; from: 0; to: 0.7; dur: 500; dir: normal; loop: false; easing: easeInOutQuad; startEvents: fadein;" 
               animation__fadeout="property: text.opacity; from: 0.7; to: 0; dur: 500; dir: normal; loop: false; easing: easeInOutQuad; startEvents: fadeout;"
               animation__jitter="property: text.xOffset; dur: 100; from: 0; to: 0.005; loop:true; autoplay: false;"
               sound="src: #beep; on: beep;"></a-entity>
 
     <!-- Projector window -->
-    <a-entity geometry="primitive: plane; width: 1; height: 1;" material="shader: flat; color: white; side: back;" position="0 4 10" sound="src: #projector; autoplay: true; loop: true;"></a-entity>
+    <a-entity rotation="-90 0 0" geometry="primitive: plane; width: 1; height: 1;" material="shader: flat; color: white; side: back;" position="0 4 10" sound="src: #projector; autoplay: true; loop: true;"></a-entity>
   </a-marker>
   
   <a-entity camera></a-entity>
