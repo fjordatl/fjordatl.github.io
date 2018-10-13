@@ -101,10 +101,7 @@
     <a-asset-item id="beep" src="https://ucarecdn.com/d4358204-ae37-4d29-8eee-32b689bad40e/" preload="auto" crossorigin="anonymous" response-type="arraybuffer"></a-asset-item>
     <a-asset-item id="projector" src="//ucarecdn.com/529ef4e7-7ea4-4e03-9b62-725bd54d09a3/" preload="auto" crossorigin="anonymous" response-type="arraybuffer"></a-asset-item>
   </a-assets>
-  
-  <!-- Camera -->
-  <a-camera look-controls="pointerLockEnabled: true;" position="0 1.6 0"></a-camera>
-  
+
   <a-marker type='barcode' value='14'>
     <!-- Screen -->
     <a-entity film geometry="primitive: plane; width: 6; height: 2.5;" material="color: #ffe; shader: flat; opacity: 0.95; side: double;" text="font: roboto; width: 5; color: black; align: center; opacity: 0; zOffset: 0.01;" position="0 2 -4"
@@ -116,5 +113,7 @@
     <!-- Projector window -->
     <a-entity geometry="primitive: plane; width: 1; height: 1;" material="shader: flat; color: white; side: back;" position="0 4 10" sound="src: #projector; autoplay: true; loop: true;"></a-entity>
   </a-marker>
+  
+  <a-entity camera></a-entity>
   
 </a-scene>
