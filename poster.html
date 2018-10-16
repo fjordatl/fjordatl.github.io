@@ -1,0 +1,89 @@
+<html>
+<head>
+<!-- A-Frame 0.7.1 -->
+<!-- <script src="//aframe.io/releases/0.7.1/aframe.min.js"></script> -->
+
+<!-- A-Frame 0.8.0 -->
+<!--<script src="//aframe.io/releases/0.8.0/aframe.min.js"></script>-->
+<script src="vendor/aframe.min.js"></script>
+<script src="vendor/aframe-ar.js"></script>
+
+<!-- A-Frame Master -->
+<!-- <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script> -->
+
+<!-- A-Frame Extras -->
+<!-- <script src="//unpkg.com/aframe-extras@3.13.1/dist/aframe-extras.min.js"></script> -->
+
+<!-- A-Frame Animation -->
+<script src="//unpkg.com/aframe-animation-component@4.1.1/dist/aframe-animation-component.min.js"></script>
+
+<!-- A-Frame Environment -->
+<!-- <script src="//unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script> -->
+
+<script>
+  AFRAME.registerComponent('film', {
+    
+    // dependencies: ['animation__fadein', 'animation__fadeout'],
+    
+    init: function() {
+      
+      var messages = [
+        "Hey, you.",
+        "Yeah, YOU!",
+        "I bet you're wondering how you got here.",
+        "You will find out in due time, friend.",
+        "I'm afraid it will have to remain a mystery for now.",
+        "Look behind you.",
+        "See the projection room?",
+        "Who's operating the projector?",
+        "Why isn't there anyone else in the theater?",
+        "Quite the conundrum, indeed.",
+         "I have a favor to ask of you.",
+        "And unfortunately, you don't really have the option to decline.",
+        ":(",
+        "I will find you when the time is right.",
+        "Until then...",
+        "Finis"
+      ];
+      
+      var i = 0;
+      
+      var interval = setInterval( function() {
+        this.el.emit('beep');
+        this.el.setAttribute('text', 'value', messages[i++]);
+        this.el.emit('fadein');
+        if (i === messages.length ) clearInterval(interval);
+      }.bind(this), 4000);
+      
+      this.el.addEventListener('animationcomplete', function(e) {
+        if ( e.detail.name !== 'animation__fadein' ) return;
+        
+        // console.log('fadein animation completed');
+      }.bind(this));
+      
+    }
+    
+  });
+</script>
+</head>
+  
+<body>
+<!-- SCENE -->
+<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUiEnabled:false;'>
+  
+  <a-marker type='barcode' value='14'>
+    <!-- Screen -->
+    <a-entity film rotation="-90 0 0" geometry="primitive: plane; width: 1.5; height: 3;" material="color: #ffe; shader: flat; opacity: 0.95; side: double;" text="font: roboto; width: 2.8; color: black; align: center; opacity: 0; zOffset: 0.01;" position="0 0 0"
+              animation__fadein="property: text.opacity; from: 0; to: 0.7; dur: 500; dir: normal; loop: false; easing: easeInOutQuad; startEvents: fadein;" 
+              animation__fadeout="property: text.opacity; from: 0.7; to: 0; dur: 500; dir: normal; loop: false; easing: easeInOutQuad; startEvents: fadeout;">
+    </a-entity>
+
+    <!-- Projector window -->
+    <a-entity rotation="-90 0 0" geometry="primitive: plane; width: 1; height: 1;" material="shader: flat; color: white; side: back;" position="0 0 0"></a-entity>
+  </a-marker>
+  
+  <a-entity camera></a-entity>
+  
+</a-scene>
+</body>
+</html>
