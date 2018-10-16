@@ -9,6 +9,7 @@
 	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUiEnabled:false;'>
       <a-assets>
         <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
+        <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous" />
         <img id="map" src="assets/ground.png">
         <img id="dome" src="assets/dome.png">
         <img id="fox" src="assets/fox.png">
@@ -16,7 +17,7 @@
         <img id="fish" src="assets/fish.png">
         <img id="coke" src="assets/coke.png">
         <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
-<!--        <a-asset-item id="sansFont" src="https://cdn.aframe.io/fonts/Aileron-Semibold.fnt"></a-asset-item>-->
+        <a-asset-item id="exoFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"></a-asset-item>
       </a-assets>
 
 		<!-- handle matrix marker -->
@@ -24,10 +25,8 @@
           <a-entity rotation="-90 0 0" position="0 2 -1" text-geometry="value: Fjord; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: .5; height: 0;" material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;">
             <a-animation attribute="position" to="0 0 -1" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
           </a-entity>
-<!--
-          <a-entity position="0 0 -0.5" rotation="-90 0 0" text-geometry="value: ATL; font: #sansFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; 
-          size: .5; height: 0" material="color: white;"></a-entity>
--->
+          <a-entity position="0 0 -0.5" rotation="-90 0 0" text-geometry="value: ATL; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; 
+          size: .5; height: 0" material="color:pink;metalness:0.9;roughness:0.05;sphericalEnvMap:#chrome"></a-entity>
           <a-entity rotation="180 0 0" position="0 1 .5" scale="2.5 2.5 2.5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#map;"></a-entity>
           <a-entity rotation="-90 0 0" position="-.5 1.5 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#dome;">
             <a-animation attribute="position" to="-.5 1.5 -1" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
@@ -35,7 +34,7 @@
           <a-entity rotation="-90 0 0" position="-.75 0 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#fox;"></a-entity>
           <a-entity rotation="-90 0 0" position=".75 1.0 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#fish;"></a-entity>
           <a-entity rotation="-90 0 0" position=".5 .75 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#varsity;"></a-entity>
-          <a-entity rotation="-90 0 0" position="-.5 .75 0" scale=".5 1.5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#coke;"></a-entity>
+          <a-entity rotation="-90 0 0" position="-.5 .75 0" scale=".5 2 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#coke;"></a-entity>
 <!--
           <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:pink;'>
             <a-torus-knot radius='0.26' radius-tubular='0.05'>
