@@ -36,14 +36,7 @@
         "Look behind you.",
         "See the projection room?",
         "Who's operating the projector?",
-        "Why isn't there anyone else in the theater?",
-        "Quite the conundrum, indeed.",
-         "I have a favor to ask of you.",
-        "And unfortunately, you don't really have the option to decline.",
-        ":(",
-        "I will find you when the time is right.",
-        "Until then...",
-        "Finis"
+        "Why isn't there anyone else in the theater?"
       ];
       
       var i = 0;
@@ -53,7 +46,7 @@
         this.el.setAttribute('text', 'value', messages[i++]);
         this.el.emit('fadein');
         if (i === messages.length ) clearInterval(interval);
-      }.bind(this), 4000);
+      }.bind(this), 2000);
       
       this.el.addEventListener('animationcomplete', function(e) {
         if ( e.detail.name !== 'animation__fadein' ) return;
@@ -73,7 +66,7 @@
   
   <a-marker type='barcode' value='14'>
     <!-- Screen -->
-    <a-entity film rotation="-90 0 0" geometry="primitive: plane; width: 1.5; height: 3;" material="color: #ffe; shader: flat; opacity: 0.95; side: double;" text="font: roboto; width: 2.8; color: black; align: center; opacity: 0; zOffset: 0.01;" position="0 0 0"
+    <a-entity film rotation="-90 0 0" geometry="primitive: plane; width: 2; height: 3;" material="color: #ffe; shader: flat; opacity: 0.95; side: double;" text="font: roboto; width: 2.8; color: black; align: center; opacity: 0; zOffset: 0.01;" position="0 0 0"
               animation__fadein="property: text.opacity; from: 0; to: 0.7; dur: 500; dir: normal; loop: false; easing: easeInOutQuad; startEvents: fadein;" 
               animation__fadeout="property: text.opacity; from: 0.7; to: 0; dur: 500; dir: normal; loop: false; easing: easeInOutQuad; startEvents: fadeout;">
     </a-entity>
