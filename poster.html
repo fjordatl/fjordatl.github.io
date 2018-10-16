@@ -64,16 +64,16 @@
 <!-- SCENE -->
 <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUiEnabled:false;'>
   
+  <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
   <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
 
   <a-marker type='barcode' value='14'>
     <!-- Screen -->
     <a-entity rotation="-90 0 0" position="0 2 -1" text-geometry="value: Mashup; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: .5; height: 0;" material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;">
-      <a-animation attribute="position" to="0 0 -1" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
     </a-entity>
     <a-entity film rotation="-90 0 0" geometry="primitive: plane; width: 2; height: 3;" material="color: #ffe; shader: flat; opacity: 0.95; side: double;" text="font: roboto; width: 2.8; color: black; align: center; opacity: 0; zOffset: 0.01;" position="0 0 0"
-              animation__fadein="property: text.opacity; from: 0; to: 0.7; dur: 500; dir: normal; loop: false; easing: easeInOutQuad; startEvents: fadein;" 
-              animation__fadeout="property: text.opacity; from: 0.7; to: 0; dur: 500; dir: normal; loop: false; easing: easeInOutQuad; startEvents: fadeout;">
+        animation__fadein="property: text.opacity; from: 0; to: 0.7; dur: 500; dir: normal; loop: false; easing: easeInOutQuad; startEvents: fadein;" 
+        animation__fadeout="property: text.opacity; from: 0.7; to: 0; dur: 500; dir: normal; loop: false; easing: easeInOutQuad; startEvents: fadeout;">
     </a-entity>
 
     <!-- Projector window -->
