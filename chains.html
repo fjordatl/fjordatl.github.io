@@ -13,18 +13,20 @@
         <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
         <a-asset-item id="exoFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"></a-asset-item>
         <a-asset-item id="chain" src="assets/chain.dae"></a-asset-item>
+        <a-asset-item id="chain2" src="assets/chain.dae"></a-asset-item>
       </a-assets>
 
 		<!-- handle matrix marker -->
 		<a-marker type='barcode' value='14'>
           
-          <a-entity rotation="-90 0 0" position="0 2 -1" text-geometry="value: Fjord; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: .5; height: 0;" material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;">
+          <a-entity rotation="-90 0 0" position="0 2 -.5" text-geometry="value: Chainz; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: .5; height: 0;" material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;">
             <a-animation attribute="position" to="0 0 -1" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
           </a-entity>
-          <a-entity position="0 0 -0.5" rotation="-90 0 0" text-geometry="value: ATL; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; 
+          <a-entity position="0 0 -1" rotation="-90 0 0" text-geometry="value: 2; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; 
           size: .5; height: 0" material="color:pink;metalness:0.9;roughness:0.05;sphericalEnvMap:#chrome"></a-entity>
           
-          <a-entity id="chain-el" collada-model="#chain" scale="0.2 0.2 0.2" position="0 0.6 -.5" rotation="0 0 0" visible="true"></a-entity>
+          <a-entity id="chain-el" collada-model="#chain" scale="0.2 0.2 0.2" position="0 0.6 -.5" rotation="0 -45 0" visible="true"></a-entity>
+          <a-entity id="chain2-el" collada-model="#chain2" scale="0.2 0.2 0.2" position="0 0.6 -.5" rotation="0 -90 0" visible="true"></a-entity>
 
 		</a-marker>
 		
