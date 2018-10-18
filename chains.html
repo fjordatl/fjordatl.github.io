@@ -19,14 +19,18 @@
 		<!-- handle matrix marker -->
 		<a-marker type='barcode' value='14'>
           
-          <a-entity rotation="-90 0 0" position="0 1 -.5" text-geometry="value: Chainz; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: .5; height: 0;" material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;">
-            <a-animation attribute="position" to="0 0 -5" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
+          <a-entity rotation="-90 0 0" position="0 0 -.5" text-geometry="value: Chainz; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: .5; height: 0;" material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;">
+            <a-animation attribute="position" to="0 0 -1" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
           </a-entity>
-          <a-entity position="-.5 0 -1.25" rotation="-90 0 0" text-geometry="value: 2; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; 
+          <a-entity position="0 0 -1" rotation="-90 0 0" text-geometry="value: 2; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; 
           size: .5; height: 0" material="color:pink;metalness:0.9;roughness:0.05;sphericalEnvMap:#chrome"></a-entity>
           
-          <a-entity id="chain-el" collada-model="#chain" scale="0.2 0.2 0.2" position="0 0.6 -.5" rotation="-90 -45 0" visible="true"></a-entity>
-          <a-entity id="chain2-el" collada-model="#chain2" scale="0.2 0.2 0.2" position="0 0.6 -.5" rotation="0 -90 0" visible="true"></a-entity>
+          <a-entity id="chain-el" collada-model="#chain" scale="0.2 0.2 0.2" position="-1 0.6 -1" rotation="0 -45 0" visible="true">
+            <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+          </a-entity>
+          <a-entity id="chain2-el" collada-model="#chain2" scale="0.2 0.2 0.2" position="0 0.6 -.5" rotation="0 -90 0" visible="true">
+            <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+          </a-entity>
 
 		</a-marker>
 		
