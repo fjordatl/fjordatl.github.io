@@ -1,5 +1,15 @@
 <html>
 <head>
+  
+<script>
+window.onbeforeunload = function() { 
+    window.setTimeout(function () { 
+        window.location = 'index.html';
+    }, 0); 
+    window.onbeforeunload = null; // necessary to prevent infinite loop, that kills your browser 
+}
+</script>
+  
 <!-- A-Frame 0.7.1 -->
 <!-- <script src="//aframe.io/releases/0.7.1/aframe.min.js"></script> -->
 
