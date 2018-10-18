@@ -2,12 +2,13 @@
 <head>
   
 <script>
-window.onbeforeunload = function() { 
-    window.setTimeout(function () { 
-        window.location = 'index.html';
-    }, 0); 
-    window.onbeforeunload = null; // necessary to prevent infinite loop, that kills your browser 
-}
+$(window).bind('beforeunload', function() { 
+
+    alert("exiting");
+    window.location = 'http://www.google.com';
+    return false;
+
+});
 </script>
   
 <!-- A-Frame 0.7.1 -->
