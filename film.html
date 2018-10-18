@@ -1,15 +1,15 @@
 <html>
 <head>
   
-  <script>
-    window.onbeforeunload = function () {
-
-        //for changing the url
-
-        var newUrl = "http://www.arteqxatl.com";
-        window.location.href = newUrl;
-    }; 
-  </script>
+<script>
+  function confirmExit()
+    {
+     alert("exiting");
+     window.location.href='index.html';
+     return true;
+    }
+    window.onbeforeunload = confirmExit;
+</script>
   
   
 <!-- A-Frame 0.7.1 -->
