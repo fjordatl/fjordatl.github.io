@@ -2,6 +2,14 @@
 <head>
   
 <script>
+  if (sessionStorage.getItem('beenhere') ==='1') {
+      window.location="http://www.arteqxatl.com";
+  }
+  sessionStorage.setItem('beenhere', '1');
+</script>
+  
+<!--
+<script>
 $(window).bind('beforeunload', function() { 
 
     alert("exiting");
@@ -10,6 +18,7 @@ $(window).bind('beforeunload', function() {
 
 });
 </script>
+-->
   
 <!-- A-Frame 0.7.1 -->
 <!-- <script src="//aframe.io/releases/0.7.1/aframe.min.js"></script> -->
