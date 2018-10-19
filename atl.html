@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  
+<script src="vendor/aframe.min.js"></script>
+<!-- include aframe-ar.js -->
+<script src="vendor/aframe-ar.js"></script>
+<script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+
+</head>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+  
+	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUiEnabled:false;'>
+      <a-assets>
+        <a-asset-item id="ferris" src="assets/ferris.dae"></a-asset-item>
+        <a-asset-item id="waffle" src="assets/waffle.dae"></a-asset-item>
+      </a-assets>
+
+		<!-- handle matrix marker -->
+		<a-marker type='barcode' value='14'>
+          <a-entity id="ferris-el" collada-model="#ferris" scale="0.2 0.2 0.2" position="0 -.7 -1" rotation="0 0 0" visible="true">
+          </a-entity>
+          <a-entity id="waffle-el" collada-model="#waffle" scale="0.2 0.2 0.2" position="0 0.6 0" rotation="0 0 0" visible="true">
+            <a-animation attribute="rotation" to="360 360 360" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+          </a-entity>
+		</a-marker>
+		
+		<!-- add a simple camera -->
+		<a-entity camera></a-entity>
+	</a-scene>
+</body>
+</html>
