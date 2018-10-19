@@ -8,17 +8,19 @@
   }
 </style>
   
+<!--
 <script>
   document.querySelector("button").addEventListener("click", (e)=>{
 	console.log("HIDE OBJECTS")
 })
 </script>
   
+-->
 <script src="vendor/aframe.min.js"></script>
 <!-- include aframe-ar.js -->
 <script src="vendor/aframe-ar.js"></script>
 <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
-<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+<!--<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>-->
 
 </head>
 
@@ -29,7 +31,7 @@
     </button>
   </div>
   
-  <a-scene embedded arjs="sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3" vr-mode-ui="enabled: false">
+  <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3' vr-mode-ui='enabled: false'>
     <a-assets>
       <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
       <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous" />
