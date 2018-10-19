@@ -1,6 +1,11 @@
 <html>
 
 <head>
+<style>
+  #arjsDebugUIContainer {
+    display:none;
+  }
+</style>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
   
@@ -14,7 +19,7 @@
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
   
-	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUiEnabled:false' vr-mode-ui="enabled: false">
+	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3' debugUi="Enabled: false" vr-mode-ui="enabled: false">
       <a-assets>
         <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
         <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous" />
