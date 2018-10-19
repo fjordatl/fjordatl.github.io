@@ -1,26 +1,19 @@
 <html>
 <head>
   
-<!--
-<script>
-  if (sessionStorage.getItem('beenhere') ==='1') {
-      window.location="http://www.arteqxatl.com";
-  }
-  sessionStorage.setItem('beenhere', '1');
-</script>
--->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
   
-<!--
+<style>
+  #arjsDebugUIContainer {
+    display:none;
+  }
+</style>
+  
 <script>
-$(window).bind('beforeunload', function() { 
-
-    alert("exiting");
-    window.location = 'http://www.google.com';
-    return false;
-
-});
+  document.querySelector("button").addEventListener("click", (e)=>{
+	console.log("HIDE OBJECTS")
+})
 </script>
--->
   
 <!-- A-Frame 0.7.1 -->
 <!-- <script src="//aframe.io/releases/0.7.1/aframe.min.js"></script> -->
@@ -83,8 +76,14 @@ $(window).bind('beforeunload', function() {
 </head>
   
 <body>
+  
+<div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+  <button>
+      <a href="index.html">TRY NEW EXPERIENCE</a>
+  </button>
+</div>
 <!-- SCENE -->
-<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUiEnabled:false;'>
+<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3' debugUi="Enabled: false" vr-mode-ui="enabled: false">
   
   <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
   <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>

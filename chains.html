@@ -1,5 +1,16 @@
 <html>
-
+<head>
+<style>
+  #arjsDebugUIContainer {
+    display:none;
+  }
+</style>
+  
+<script>
+  document.querySelector("button").addEventListener("click", (e)=>{
+	console.log("HIDE OBJECTS")
+})
+</script>
 <!--
 <script>
   if (sessionStorage.getItem('beenhere') ==='1') {
@@ -14,9 +25,18 @@
 <script src="vendor/aframe-ar.js"></script>
 <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
 <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+  
+</head>
 
-<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
-	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUiEnabled:false;'>
+<body>
+  
+  <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+    <button>
+        <a href="index.html">TRY NEW EXPERIENCE</a>
+    </button>
+  </div>
+  
+	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'  debugUi="Enabled: false" vr-mode-ui="enabled: false">
       <a-assets>
         <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
         <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous" />
