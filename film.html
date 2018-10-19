@@ -2,12 +2,10 @@
 <head>
   
 <script>
-window.onbeforeunload = function() { 
-    window.setTimeout(function () { 
-        window.location = 'index.html';
-    }, 0); 
-    window.onbeforeunload = null; // necessary to prevent infinite loop, that kills your browser 
-}
+  if (sessionStorage.getItem('beenhere') ==='1') {
+      window.location="http://www.arteqxatl.com";
+  }
+  sessionStorage.setItem('beenhere', '1');
 </script>
   
   
