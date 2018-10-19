@@ -36,7 +36,7 @@
         <a-asset-item id="exoFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"></a-asset-item>
         <a-asset-item id="chain" src="assets/chain.dae"></a-asset-item>
         <a-asset-item id="chain2" src="assets/chain.dae"></a-asset-item>
-        <a-asset-item img id="sky" src="assets/sky.jpg" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="sky" src="assets/sky.jpg" crossorigin="anonymous"></a-asset-item>
       </a-assets>
 
 		<!-- handle matrix marker -->
@@ -49,9 +49,8 @@
           <a-entity id="chain2-el" collada-model="#chain2" scale="0.2 0.2 0.2" position="0 0.6 0" rotation="0 0 0" visible="true">
             <a-animation attribute="rotation" to="360 360 360" dur="5000" easing='linear' repeat="indefinite"></a-animation>
           </a-entity>
+          <a-entity rotation="-90 0 0" scale="4 4 4" geometry="primitive:plane;" material="alphaTest: 0.5; src:#sky;"></a-entity>
 		</a-marker>
-		
-      <a-sky src="#sky" rotation="0 -90 0"></a-sky>
       
 		<!-- add a simple camera -->
 		<a-entity camera></a-entity>
