@@ -31,10 +31,10 @@
     </button>
   </div>
   
-  <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3' vr-mode-ui='enabled: false'>
+  <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3'>
     <a-assets>
-      <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
-      <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous" />
+      <img id="pink" src="assets/pink.jpg" crossorigin="anonymous" />
+      <img id="chrome" src="assets/chrome.jpg"crossorigin="anonymous" />
       <img id="map" src="assets/ground.png">
       <img id="dome" src="assets/dome.png">
       <img id="fox" src="assets/fox.png">
@@ -48,13 +48,13 @@
     <!-- handle matrix marker -->
     <a-marker type='barcode' value='14'>
       <a-entity rotation="-90 0 0" position="-.75 2 -1.25" text-geometry="value: Fjord; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: .5; height: 0;" material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;">
-        <a-animation attribute="position" to="-.75 0 -1.25" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
+<!--        <a-animation attribute="position" to="-.75 0 -1.25" direction="alternate" dur="2000" repeat="indefinite"></a-animation>-->
       </a-entity>
       <a-entity position="0 0 -0.5" rotation="-90 0 0" text-geometry="value: ATL; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; 
       size: .5; height: 0" material="color:pink;metalness:0.9;roughness:0.05;sphericalEnvMap:#chrome"></a-entity>
       <a-entity rotation="180 0 0" position="0 1 .5" scale="2.5 2.5 2.5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#map;"></a-entity>
       <a-entity rotation="-90 0 0" position="-.5 1.5 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#dome;">
-        <a-animation attribute="position" to="-.5 1.5 -1" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
+<!--        <a-animation attribute="position" to="-.5 1.5 -1" direction="alternate" dur="2000" repeat="indefinite"></a-animation>-->
       </a-entity>
       <a-entity rotation="-90 0 0" position="-.75 0 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#fox;"></a-entity>
       <a-entity rotation="-90 0 0" position=".75 1.0 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#fish;"></a-entity>
@@ -64,6 +64,6 @@
 
     <!-- add a simple camera -->
     <a-entity camera></a-entity>
-	</a-scene>
+  </a-scene>
 </body>
 </html>
