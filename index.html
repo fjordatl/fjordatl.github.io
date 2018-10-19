@@ -25,12 +25,14 @@
 </head>
 
 <body>
+<!--
   <div style="position: fixed; top: 10px; width:100%; text-align: center; z-index: 1000;">
     <button>
         <a href="index.html">TRY NEW EXPERIENCE</a>
     </button>
   </div>
   
+-->
   <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3' vr-mode-ui="enabled: false">
     <a-assets>
       <img id="pink" src="assets/pink.jpg" crossorigin="anonymous" />
@@ -61,7 +63,7 @@
       <a-entity rotation="-90 0 0" position=".75 1.0 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#fish;"></a-entity>
       <a-entity rotation="-90 0 0" position=".5 .75 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#varsity;"></a-entity>
       <a-entity rotation="-90 0 0" position="-.5 .75 0" scale=".5 1 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#coke;"></a-entity>
-      <a-entity id="chain-el" collada-model="#chain" scale="0.2 0.2 0.2" position="0 -.7 -1" rotation="0 0 0" visible="true"></a-entity>
+      <a-entity id="chain-el" collada-model="#chain" scale="0.2 0.2 0.2" position="-.8 -.7 -1" rotation="0 0 0" visible="true"></a-entity>
     </a-marker>
 
     <!-- add a simple camera -->
