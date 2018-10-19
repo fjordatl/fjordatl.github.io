@@ -1,5 +1,4 @@
 <html>
-
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
@@ -17,6 +16,7 @@
 	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUiEnabled:false;'>
       <a-assets>
         <a-asset-item id="ferris" src="assets/ferris.dae"></a-asset-item>
+        <a-asset-item id="bottle" src="assets/bottle.dae"></a-asset-item>
         <a-asset-item id="waffle" src="assets/waffle.dae"></a-asset-item>
       </a-assets>
 
@@ -26,6 +26,8 @@
           </a-entity>
           <a-entity id="waffle-el" collada-model="#waffle" scale="0.2 0.2 0.2" position="0 0.6 0" rotation="0 0 0" visible="true">
             <a-animation attribute="rotation" to="360 360 360" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+          </a-entity>
+          <a-entity id="bottle-el" collada-model="#bottle" scale="0.2 0.2 0.2" position="0 -.7 -1" rotation="0 0 0" visible="true">
           </a-entity>
 		</a-marker>
 		
