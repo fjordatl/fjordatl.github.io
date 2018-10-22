@@ -1,75 +1,52 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-  
-<style>
-  #arjsDebugUIContainer {
-    display:none;
-  }
-</style>
-  
-<!--
-<script>
-  document.querySelector("button").addEventListener("click", (e)=>{
-	console.log("HIDE OBJECTS")
-})
-</script>
-  
--->
-<script src="vendor/aframe.min.js"></script>
-<!-- include aframe-ar.js -->
-<script src="vendor/aframe-ar.js"></script>
-<script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
-<!--<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>-->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>ART/EQX/ATL</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../../dist/images/favicon.png">
 
 </head>
-
 <body>
-<!--
-  <div style="position: fixed; top: 10px; width:100%; text-align: center; z-index: 1000;">
-    <button>
-        <a href="index.html">TRY NEW EXPERIENCE</a>
-    </button>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <div class="section intro">
+    <div class="container">
+      <h3 class="section-heading">Go beyond the physical gallery space and expand your view.</h3>
+      <p class="section-description">Experience the ATL in a whole new way</p>
+      <a class="button button-primary" href="map.html">View Experience</a>
+    </div>
   </div>
-  
--->
-  <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3' vr-mode-ui="enabled: false">
-    <a-assets>
-      <img id="pink" src="assets/pink.jpg" crossorigin="anonymous" />
-      <img id="chrome" src="assets/chrome.jpg"crossorigin="anonymous" />
-      <img id="map" src="assets/ground.png">
-      <img id="dome" src="assets/dome.png">
-      <img id="fox" src="assets/fox.png">
-      <img id="varsity" src="assets/varsity.png">
-      <img id="fish" src="assets/fish.png">
-      <img id="coke" src="assets/coke.png">
-      <a-asset-item id="chain" src="assets/chain.dae"></a-asset-item>
-      <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
-      <a-asset-item id="exoFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"></a-asset-item>
-      <a-asset-iten id="creepy" src="https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/creepster/Creepster-Regular.json;"></a-asset-iten>
-    </a-assets>
 
-    <!-- handle matrix marker -->
-    <a-marker type='barcode' value='14'>
-      <a-entity rotation="-90 0 0" position="-.75 1.5 -1.25" text-geometry="value: Fjord; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: .5; height: 0;" material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;">
-<!--        <a-animation attribute="position" to="-.75 0 -1.25" direction="alternate" dur="2000" repeat="indefinite"></a-animation>-->
-      </a-entity>
-      <a-entity position="0 0 -0.5" rotation="-90 0 0" text-geometry="value: ATL; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; 
-      size: .5; height: 0" material="color:pink;metalness:0.9;roughness:0.05;sphericalEnvMap:#chrome"></a-entity>
-      <a-entity position="-1 .5 0" rotation="0 0 0" text-geometry="value: DANG!; color:#FFFFFF; shader: msdf; font: #creepy; size: .5; height: 0"></a-entity>
-      <a-entity rotation="180 0 0" position="0 1 .5" scale="2.5 2.5 2.5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#map;"></a-entity>
-      <a-entity rotation="-90 0 0" position="-.5 1.5 -.25" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#dome;">
-<!--        <a-animation attribute="position" to="-.5 1.5 -1" direction="alternate" dur="2000" repeat="indefinite"></a-animation>-->
-      </a-entity>
-      <a-entity rotation="-90 0 0" position="-.25 0 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#fox;"></a-entity>
-      <a-entity rotation="-90 0 0" position="-.5 1.0 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#fish;"></a-entity>
-      <a-entity rotation="-90 0 0" position=".35 .55 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#varsity;"></a-entity>
-      <a-entity rotation="-90 0 0" position="-.3 .85 0" scale=".5 1 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#coke;"></a-entity>
-      <a-entity id="chain-el" collada-model="#chain" scale="0.2 0.2 0.2" position="-.3 0 -1" rotation="0 60 30" visible="true"></a-entity>
-    </a-marker>
 
-    <!-- add a simple camera -->
-    <a-entity camera></a-entity>
-  </a-scene>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>
