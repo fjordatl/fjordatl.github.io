@@ -46,7 +46,7 @@
       <a-asset-item id="waffle" src="assets/waffle.dae"></a-asset-item>
       <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
       <a-asset-item id="exoFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"></a-asset-item>
-      <a-asset-iten id="creepy" src="https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/creepster/Creepster-Regular.json;"></a-asset-iten>
+      <a-asset-iten id="creepy" src="https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/creepster/Creepster-Regular.json"></a-asset-iten>
     </a-assets>
 
     <!-- handle matrix marker -->
@@ -58,11 +58,11 @@
       size: .5; height: 0" material="color:pink;metalness:0.9;roughness:0.05;sphericalEnvMap:#chrome"></a-entity>
       <a-entity position="0 .5 0" rotation="0 0 0" text="value: DANG!; color:#FFFFFF; shader: msdf; font: #creepy; size: .5; height: 0"></a-entity>
       <a-entity rotation="180 0 0" position="0 1 .5" scale="2.5 2.5 2.5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#map;"></a-entity>
-      <a-entity rotation="-90 0 0" position="-.5 1.75 -.15" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#dome;">
+      <a-entity rotation="-90 0 0" position="-.5 1.75 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#dome;">
 <!--        <a-animation attribute="position" to="-.5 1.5 -1" direction="alternate" dur="2000" repeat="indefinite"></a-animation>-->
       </a-entity>
       <a-entity rotation="-90 0 0" position="-.25 .3 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#fox;"></a-entity>
-      <a-entity rotation="-90 0 0" position="-.5 1.5 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#fish;"></a-entity>
+      <a-entity rotation="-90 0 0" position="-.5 1.5 -.15" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#fish;"></a-entity>
       <a-entity rotation="-90 0 0" position=".35 .65 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#varsity;"></a-entity>
       <a-entity rotation="-90 0 0" position="-.3 .85 0" scale=".5 1 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#coke;"></a-entity>
       <a-entity id="chain-el" collada-model="#chain" scale="0.2 0.2 0.2" position="-.3 0 -1" rotation="0 60 30" visible="true"></a-entity>
